@@ -48,6 +48,9 @@ namespace Microsoft.DocAsCode.Build.Engine
                     }
             };
             phaseProcessor.Process(new List<HostService> { hostService }, parameters.MaxParallelism);
+
+            (markdownService as IDisposable)?.Dispose();
+
             return hostService.Models;
         }
 
