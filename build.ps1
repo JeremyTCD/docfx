@@ -19,7 +19,7 @@ $releaseBranch = "master"
 $dotnetCommand = "dotnet"
 $gitCommand = "git"
 $framework = "net462"
-$packageVersion = "1.0.0"
+$packageVersion = $env:APPVEYOR_REPO_TAG_NAME
 $assemblyVersion = "1.0.0.0"
 
 if ([environment]::OSVersion.Platform -eq "Win32NT") {

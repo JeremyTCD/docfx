@@ -1,8 +1,14 @@
-Version Notes (Current Version: v2.40)
+Version Notes (Current Version: v2.39.2)
 =======================================
 
-v2.40 (Pre-release)
+v2.39.2
 -----------
+1. Fix ArgumentNullException error when extracting metadata from DLL. (#3374)
+
+v2.39.1
+-----------
+1. Update Nuget package config.
+2. Fix Chocolatey package download error. (#3349)
 
 v2.39
 -----------
