@@ -114,7 +114,7 @@ namespace Microsoft.DocAsCode.Build.Engine
 
             return new XElement
                  (Namespace + "url",
-                 new XElement(Namespace + "loc", uri.AbsoluteUri),
+                 new XElement(Namespace + "loc", uri.AbsoluteUri.Replace(".html", "")),
                  new XElement(Namespace + "lastmod", (options.LastModified ?? DateTime.Now).ToString("yyyy-MM-ddThh:mm:ssK")),
                  new XElement(Namespace + "changefreq", (options.ChangeFrequency ?? PageChangeFrequency.Daily).ToString().ToLowerInvariant()),
                  new XElement(Namespace + "priority", options.Priority ?? 0.5)

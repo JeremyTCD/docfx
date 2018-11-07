@@ -90,7 +90,7 @@ public class HelloWorld(){}}
             var docfxJsonFile = Path.Combine(_projectFolder, "docfx.json");
             File.WriteAllText(docfxJsonFile, docfxJson);
             Program.ExecSubCommand(new string[] { docfxJsonFile });
-            var filePath = Path.Combine(_outputFolder, "site", "api", "Hello.HelloWorld.html");
+            var filePath = Path.Combine(_outputFolder, "site", "api", "Hello.HelloWorld");
             Assert.True(File.Exists(filePath));
             var html = new HtmlDocument();
             html.Load(filePath);
@@ -116,12 +116,12 @@ for (var i = 0; i &lt; 10; i++){
             Assert.Equal(2, elements.Count);
             Assert.Equal("0.3", elements[0].Element(XName.Get("priority", ns)).Value);
             Assert.Equal("monthly", elements[0].Element(XName.Get("changefreq", ns)).Value);
-            Assert.Equal("https://dotnet.github.io/docfx/api/Hello.HelloWorld.html", elements[0].Element(XName.Get("loc", ns)).Value);
+            Assert.Equal("https://dotnet.github.io/docfx/api/Hello.HelloWorld", elements[0].Element(XName.Get("loc", ns)).Value);
             Assert.Equal(new DateTime(1999, 01, 01).ToString("yyyy-MM-ddThh:mm:ssK"), elements[0].Element(XName.Get("lastmod", ns)).Value);
 
             Assert.Equal("0.8", elements[1].Element(XName.Get("priority", ns)).Value);
             Assert.Equal("daily", elements[1].Element(XName.Get("changefreq", ns)).Value);
-            Assert.Equal("https://dotnet.github.io/docfx/1/api/Hello.html", elements[1].Element(XName.Get("loc", ns)).Value);
+            Assert.Equal("https://dotnet.github.io/docfx/1/api/Hello", elements[1].Element(XName.Get("loc", ns)).Value);
         }
     }
 }
