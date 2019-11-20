@@ -121,10 +121,11 @@ namespace Microsoft.DocAsCode.Build.ConceptualDocuments
                 FileLinkSources = model.FileLinkSources,
                 UidLinkSources = model.UidLinkSources,
             };
-            if (model.Properties.XrefSpec != null)
-            {
-                result.XRefSpecs = ImmutableArray.Create(model.Properties.XrefSpec);
-            }
+            // TODO why doesn't expando obj work?
+            //if (model.Properties.XrefSpec != null)
+            //{
+            //    result.XRefSpecs = ImmutableArray.Create(model.Properties.XrefSpec);
+            //}
 
             return result;
         }
