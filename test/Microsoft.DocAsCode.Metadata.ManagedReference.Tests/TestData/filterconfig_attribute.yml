@@ -1,4 +1,0 @@
-﻿attributeRules:
-- exclude:
-    uidRegex: ^System\.Runtime\.InteropServices\.ComVisibleAttribute$
-    type: Type

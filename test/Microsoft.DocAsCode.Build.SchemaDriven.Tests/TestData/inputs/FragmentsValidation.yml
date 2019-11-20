@@ -1,5 +1,0 @@
-### YamlMime:FragmentsValidation
-uid: management.azure.com.advisor.fragmentsValidation
-name: FragmentsValidation
-operations:
-- id: management.azure.com.advisor.fragmentsValidation.create
