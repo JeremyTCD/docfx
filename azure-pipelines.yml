@@ -8,9 +8,28 @@ jobs:
   steps:
   - powershell: ./build.ps1
     displayName: "Build"
-  - powershell: |
+  # AzureArtifacts feeds don't support api keys (dotnet push ... --api-key or nuget ... -apikey). Instead, they require a password and a username,
+  # both of which cannot be specified via the command line. Password and username must be added to nuget.config. To perform this addition, 
+  # we need nuget.exe. 
+  - pwsh: |
+      "Installing Nuget:`n"
+      Invoke-WebRequest "https://dist.nuget.org/win-x86-commandline/v4.7.1/nuget.exe" -outfile nuget.exe
+      if(-not($?)){
+        throw "Failed to install Nuget."
+      }
+      "    Nuget installed:`n"
+      ./nuget.exe help
+    displayName: "Install NuGet"
+  - pwsh: |
       cd artifacts/Release
+      ../../nuget.exe sources add -name docfx -source "https://pkgs.dev.azure.com/JeremyTCD/docfx/_packaging/docfx/nuget/v3/index.json" -username x -password $env:NUGETPUSHPAT 
       get-childitem *.nupkg | foreach-object {
-        dotnet nuget push --source "https://pkgs.dev.azure.com/JeremyTCD/_packaging/Main/nuget/v3/index.json" --api-key random $_.fullname
+        try { # In case some packages have already been published
+          ../../nuget.exe push $_.fullname -source docfx -apikey x
+        } catch {
+          # Do nothing
+        }
       }
     displayName: "Publish"
+    env: 
+      NUGETPUSHPAT: $(nugetPushPat)
