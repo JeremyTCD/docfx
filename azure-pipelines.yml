@@ -1,0 +1,16 @@
+trigger:
+- dev
+
+jobs:
+- job: "BuildAndPublish"
+  pool:
+    vmImage: "windows-2019"
+  steps:
+  - powershell: ./build.ps1
+    displayName: "Build"
+  - powershell: |
+      cd artifacts/Release
+      get-childitem *.nupkg | foreach-object {
+        dotnet nuget push --source "https://pkgs.dev.azure.com/JeremyTCD/_packaging/Main/nuget/v3/index.json" --api-key random $_.fullname
+      }
+    displayName: "Publish"

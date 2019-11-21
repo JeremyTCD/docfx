@@ -6,7 +6,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6A65A769-DAC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{718078B4-D34C-4697-AAD1-5844CBF60997}"
 	ProjectSection(SolutionItems) = preProject
-		appveyor.yml = appveyor.yml
+		azure-pipelines.yml = azure-pipelines.yml
 		build.ps1 = build.ps1
 		NuGet.Config = NuGet.Config
 		README.md = README.md
@@ -109,8 +109,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.DocAsCode.MarkdigEngine.Extensions", "src\Microsoft.DocAsCode.MarkdigEngine.Extensions\Microsoft.DocAsCode.MarkdigEngine.Extensions.csproj", "{FD0365CB-3F03-43B0-9FB2-FB50047BF3E5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.DocAsCode.MarkdigEngine.Validators", "src\Microsoft.DocAsCode.MarkdigEngine.Validators\Microsoft.DocAsCode.MarkdigEngine.Validators.csproj", "{BD35FD90-4F00-4A19-9530-2279A6A15EE8}"
-EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Microsoft.DocAsCode.Metadata.ManagedReference.FSharp", "src\Microsoft.DocAsCode.Metadata.ManagedReference.FSharp\Microsoft.DocAsCode.Metadata.ManagedReference.FSharp.fsproj", "{98610813-2DD7-4FB7-8F82-272EF3C40E89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -482,18 +480,6 @@ Global
 		{BD35FD90-4F00-4A19-9530-2279A6A15EE8}.Release|x64.Build.0 = Release|Any CPU
 		{BD35FD90-4F00-4A19-9530-2279A6A15EE8}.Release|x86.ActiveCfg = Release|Any CPU
 		{BD35FD90-4F00-4A19-9530-2279A6A15EE8}.Release|x86.Build.0 = Release|Any CPU
-		{98610813-2DD7-4FB7-8F82-272EF3C40E89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98610813-2DD7-4FB7-8F82-272EF3C40E89}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{98610813-2DD7-4FB7-8F82-272EF3C40E89}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{98610813-2DD7-4FB7-8F82-272EF3C40E89}.Debug|x64.Build.0 = Debug|Any CPU
-		{98610813-2DD7-4FB7-8F82-272EF3C40E89}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{98610813-2DD7-4FB7-8F82-272EF3C40E89}.Debug|x86.Build.0 = Debug|Any CPU
-		{98610813-2DD7-4FB7-8F82-272EF3C40E89}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{98610813-2DD7-4FB7-8F82-272EF3C40E89}.Release|Any CPU.Build.0 = Release|Any CPU
-		{98610813-2DD7-4FB7-8F82-272EF3C40E89}.Release|x64.ActiveCfg = Release|Any CPU
-		{98610813-2DD7-4FB7-8F82-272EF3C40E89}.Release|x64.Build.0 = Release|Any CPU
-		{98610813-2DD7-4FB7-8F82-272EF3C40E89}.Release|x86.ActiveCfg = Release|Any CPU
-		{98610813-2DD7-4FB7-8F82-272EF3C40E89}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -548,7 +534,6 @@ Global
 		{EA44B820-4C3A-476C-A514-C89CAA6A0F46} = {6A65A769-DAC3-4E99-96F9-991F4CE8D164}
 		{FD0365CB-3F03-43B0-9FB2-FB50047BF3E5} = {6A65A769-DAC3-4E99-96F9-991F4CE8D164}
 		{BD35FD90-4F00-4A19-9530-2279A6A15EE8} = {6A65A769-DAC3-4E99-96F9-991F4CE8D164}
-		{98610813-2DD7-4FB7-8F82-272EF3C40E89} = {3A6BE380-986B-40E9-A048-C9A9AE424D90}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6C12271F-8093-4D5D-8BEE-3318BFE40E23}
